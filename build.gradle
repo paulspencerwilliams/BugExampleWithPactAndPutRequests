@@ -31,14 +31,10 @@ dependencies {
     }
     compile("org.springframework.boot:spring-boot-starter-web")
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.2.0'
-    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.2.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.2.0'
-    testCompile("au.com.dius:pact-jvm-consumer-junit5_2.12:3.5.17")
+    testCompile("au.com.dius:pact-jvm-consumer-junit5_2.12:3.5.19")
 }
 
 test {
-    useJUnitPlatform {
-        includeEngines 'junit-jupiter', 'junit-vintage'
-    }
-    systemProperties System.properties
+    useJUnitPlatform {}
 }
